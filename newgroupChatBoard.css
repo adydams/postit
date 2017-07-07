@@ -1,0 +1,19 @@
+<style>
+h3 {
+    color: blue;
+    margin-left: 600px;
+} 
+  .center {
+    margin: auto;
+    width: 30%;
+    border: 3px solid blue;
+    padding: 10px;
+    margin-top: 55px;
+}
+
+button{
+	margin-left: 120px;
+}
+
+
+  </style>
