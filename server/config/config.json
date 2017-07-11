@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "fvvvyrnf",
+    "password": "qKFwj6HffC1opGh3Mh6BY7CO7s5YcUTN",
+    "database": "fvvvyrnf",
+    "host": "babar.elephantsql.com",
+    "dialect": "postgresql",
+    "port":"5432"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "postgresql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
