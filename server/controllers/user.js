@@ -8,11 +8,11 @@ module.exports = {
         password: req.body.password,
         }
       }).then(function(user){
-          if(!user ){
+          if(user){
             res.status(400).send({
-              message:'Invalid username',
+              message:'valid username',
             })
-          }if(!user.validPassword(req.body.password)) {
+          }if(!password.validPassword(req.body.password)) {
             res.status(400).send({
               message:'Invalid password',
             })

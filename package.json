@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-dev": "nodemon ./bin/www --exec babel-node",
-    "start": "babel-watch ./bin/www",
+    "start-dev": "nodemon ./bin/www",
+    "start": "nodemon ./bin/www --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

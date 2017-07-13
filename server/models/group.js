@@ -2,15 +2,8 @@
 
 module.exports = (sequelize, DataTypes) => {
   const group = sequelize.define('group', {
-    id: {
-      type: DataTypes.STRING,
-      primaryKey: true,
-      unique: {
-        args: true,
-        msg: 'id already exists!'
-      },
      name: {
-      type: DataTypes.STRING(20),
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notEmpty: {
@@ -22,14 +15,17 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+    
     description: {
       type: DataTypes.STRING,
     },
+
     groupId:{
        type: DataTypes.STRING,
-    }
+    },
+
     } 
-  });
+  );
       group.associate = function associate(models) {
       group.hasMany(models.message);
       group.belongsTo(models.user, {

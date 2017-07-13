@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "fvvvyrnf",
-    "password": "qKFwj6HffC1opGh3Mh6BY7CO7s5YcUTN",
-    "database": "fvvvyrnf",
-    "host": "babar.elephantsql.com",
+    "username": "erdudecr",
+    "password": "1mTZ02KoE7aGg4naRA7f3CtrmHbPCU08",
+    "database": "erdudecr",
+    "host": "stampy.db.elephantsql.com",
     "dialect": "postgresql",
     "port":"5432"
   },

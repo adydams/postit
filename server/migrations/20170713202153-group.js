@@ -1,23 +1,23 @@
 module.exports = {
   up: (queryInterface, Sequelize) =>
-    queryInterface.createTable('messages', {
+    queryInterface.createTable('groups', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-       text: {
-      type: Sequelize.STRING,
-      allowNull: false,
-      unique: true,
-    },
-    priority: {
-      type: Sequelize.STRING,
-      allowNull: false,
-      unique: false,
-    },
-         
+      name: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true,
+      },
+      description: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: false,
+      },
+                    
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -27,5 +27,5 @@ module.exports = {
         type: Sequelize.DATE,
       },
     }),
-  down: (queryInterface /* , Sequelize */) => queryInterface.dropTable('messages'),
+  down: (queryInterface /* , Sequelize */) => queryInterface.dropTable('users'),
 };
