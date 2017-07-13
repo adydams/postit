@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = (sequelize, DataTypes) => {
-  const group = sequelize.define('groups', {
+  const group = sequelize.define('group', {
     id: {
       type: DataTypes.STRING,
       primaryKey: true,
@@ -23,19 +23,24 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     description: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+    },
+    groupId:{
+       type: DataTypes.STRING,
     }
     } 
   });
-  //     Group.associate = function associate(models) {
-  //   Group.hasMany(models.Message);
-  //   Group.belongsTo(models.User, {
-  //     as: 'Creator',
-  //     onDelete: 'SET NULL'
-  //   });
-  //   Group.belongsToMany(models.User, { through: 'GroupUsers' });
-  // };
-  // return Group;
-//}
+      group.associate = function associate(models) {
+      group.hasMany(models.message);
+      group.belongsTo(models.user, {
+        as: 'Creator',
+        onDelete: 'SET NULL'
+      });
+      group.belongsToMany(models.user, {
+         foreignKey: 'userId',
+         through:'groupId',
+         });
+    };
   return group;
-};
+}
+  

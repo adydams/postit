@@ -22,10 +22,7 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
-      phone: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },        
+              
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

@@ -1,4 +1,5 @@
 const userController = require('../controllers').user;
+const groupController = require('../controllers').group;
 
 //get route handler for user
 module.exports = (app) => {
@@ -7,5 +8,7 @@ module.exports = (app) => {
   }));
 
  app.post('/api/user/signup', userController.signup);
- 
+ app.post('/api/user/signin', userController.signin);
+ app.post('/api/group/createGroup', groupController.createGroup);
+ app.post('/api/group/addUserToGroup', groupController.addUserToGroup);
 };

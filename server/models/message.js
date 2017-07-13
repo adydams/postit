@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = (sequelize, DataTypes) => {
-  const message = sequelize.define('messages', {
+  const message = sequelize.define('message', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -31,17 +31,19 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+
+    userId:{
+      type:DataTypes.INTEGER,
+    },
   
     
   });
-  //     // Message.associate = function associate(models) {
-  //   Message.belongsTo(models.User, {
-  //     as: 'Author',
-  //     onDelete: 'SET NULL'
-  //   });
-  //   Message.belongsToMany(models.User, {
-  //     through: 'UserUnreadMessages'
-  //   });
-  // };
+     message.associate = function associate(models) {
+     message.belongsTo(models.user, {
+     foreignKey: 'userId',
+     onDelete: 'CASCADE',
+    });
+    
+  };
   return message;
 };
