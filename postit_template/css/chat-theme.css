@@ -1,0 +1,42 @@
+.panel-primary,
+.panel-primary > .panel-heading {
+	border-color:  rgba(223,247,255,1);
+}
+
+.panel-primary > .panel-heading {
+	background-color: rgba(223,247,255,1);
+	color: rgba(0,0,0,0.7);
+}
+
+ul > li {
+	display: initial;
+	margin-left: -40px;
+	display: block;
+}
+
+ul.individual.chat > li {
+	margin-bottom: 10px;
+	border: 1px solid rgba(241,241,241,1);
+	border-radius: 3px;
+	padding: 5px 2px;
+}
+
+ul.individual.chat > li:hover {
+	background-color: rgba(223,247,255,0.3);
+}
+
+.img-circle {
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+}
+
+.btn-primary {
+	color: #fff;
+    background-color: rgba(116,147,158,1);
+    border-color: rgba(151,151,151,1);
+    font-size: 14px
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 35px;
+}
