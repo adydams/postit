@@ -5,19 +5,19 @@ module.exports = {
     return user.findOne({
       where:{
         username: req.body.username,
-        password: req.body.password,
+        password: req.body.password
         }
-      }).then(function(user){
-          if(user){
+      }).then(function(user) {
+          if(!user) {
             res.status(400).send({
-              message:'valid username',
+              message:'invalid username',
             })
-          }if(!password.validPassword(req.body.password)) {
+          }
+          if(!user.validPassword(req.body.password)) {
             res.status(400).send({
               message:'Invalid password',
-            })
+            });
           } 
-          
           else{
             req.user = user.username;
             res.status(200).send({
@@ -27,20 +27,15 @@ module.exports = {
         })
       },
       
-  
   signup(req, res) {
-    //console.log(req.body);
      return user
       .create({
         username: req.body.username,
         password: req.body.password,
-        email: req.body.email,
-        
+        email: req.body.email
       })
       .then(newUser => res.status(201).send(newUser))
       .catch(error => res.status(400).send(error.message));
   },
 };
-
-
   

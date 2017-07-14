@@ -10,7 +10,7 @@ module.exports = {
             name:req.body.name,
             description: req.body.description,
         })
-        .then(newGroup => res.status().send(newGroup))
+        .then(newGroup => res.status(201).send({message: newGroup.name+' group successfully created'}))
         .catch(error => res.status(400).send(error.message));
     },
 
@@ -18,11 +18,9 @@ module.exports = {
         return user
             .create({
                 user: req.body.user,
-                group: req.params.group_Id,
+                group: req.body.name
             })
             .then(newGroupUser => res.status(201).send(newGroupUser))
-            .catch(newGroupUser => res.status(400).send(error));
-            
-        
+            .catch(newGroupUser => res.status(400).send(error));  
     },
 };

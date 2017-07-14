@@ -5,13 +5,21 @@ module.exports = (sequelize, DataTypes) => {
     username: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
+      unique: {
+        args: true,
+        message: 'username already exist'
+      },
+      validate: {
+        is: {
+          args: /\w+/g,
+          message: 'Input a valid username'
+        }
+      }
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: false,
-     
     },
     email: {
       type: DataTypes.STRING,
@@ -21,7 +29,6 @@ module.exports = (sequelize, DataTypes) => {
     },
   },{
      hooks: {
-
        beforeCreate: (user) => {
         const salt = bcrypt.genSaltSync();
         user.password = bcrypt.hashSync(user.password, salt);
@@ -29,19 +36,15 @@ module.exports = (sequelize, DataTypes) => {
        },instanceMethods:{
          validPassword:  function(password) {
           return bcrypt.compareSync(password, this.password);
-    
        }
     },
   });
  
-  
-     
   user.associate = function associate(models) {
     user.hasMany(models.message);
     user.belongsToMany(models.group, {
       foreignKey:'userId', 
-      through:'groupId',
-      
+      through:'groupId'
     });
   };
 
